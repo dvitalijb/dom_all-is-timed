@@ -6,11 +6,8 @@ function countClick() {
     return textSpan++;
 }
 
-let counter = function () {
-    return countClick();
-}
 setInterval( () => {
-    const newTextSpan = counter();
+    const newTextSpan = countClick();
     tagSpan.textContent = newTextSpan;
     localStorage.setItem('textSpan', newTextSpan);
-},1000)
+},1000);
