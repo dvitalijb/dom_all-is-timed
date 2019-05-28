@@ -1,13 +1,7 @@
-const tagSpan = document.querySelector('span');
-tagSpan.textContent = localStorage.getItem('textSpan') || 0;
-let textSpan = tagSpan.textContent;
+const containerCounter = document.querySelector('span');
+containerCounter.textContent = localStorage.getItem('currentDigit') || 0;
 
-function countClick() {
-    return textSpan++;
-}
-
-setInterval( () => {
-    const newTextSpan = countClick();
-    tagSpan.textContent = newTextSpan;
-    localStorage.setItem('textSpan', newTextSpan);
-},1000);
+setInterval(() => {
+    containerCounter.textContent = (+containerCounter.textContent) + 1;
+    localStorage.setItem('currentDigit', containerCounter.textContent);
+}, 1000);
