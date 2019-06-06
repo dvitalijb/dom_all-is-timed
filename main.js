@@ -1,8 +1,9 @@
 const containerCounter = document.querySelector('span');
-containerCounter.textContent = localStorage.getItem('currentDigit') || 0;
+let currentValue = localStorage.getItem('currentDigit') || 0;
+containerCounter.textContent = currentValue;
 
 setInterval(() => {
-    const counter = (+containerCounter.textContent) + 1;
-    containerCounter.textContent = counter;
-    localStorage.setItem('currentDigit', counter);
+    currentValue++;
+    containerCounter.textContent = currentValue;
+    localStorage.setItem('currentDigit', currentValue);
 }, 1000);
